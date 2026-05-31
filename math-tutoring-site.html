@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Math Tutoring | Simple Booking Website</title>
+  <meta name="description" content="Minimal tutoring website with trial lesson booking, contact inquiries, and newsletter lead magnet signup." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f4f7fb;
+      --surface-2: #e9eff7;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #d8e2ee;
+      --primary: #0b2a4a;
+      --primary-2: #133a63;
+      --white: #ffffff;
+      --success: #0f766e;
+      --radius: 18px;
+      --shadow: 0 14px 40px rgba(11, 42, 74, 0.10);
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      transition: .2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-primary:hover { background: var(--primary-2); }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--line);
+      color: var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface);
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #eaf1f8;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(216, 226, 238, 0.7);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .hero {
+      padding: 80px 0 64px;
+      background: linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    h1, h2, h3 { line-height: 1.1; margin: 0 0 16px; }
+    h1 { font-size: clamp(40px, 7vw, 68px); letter-spacing: -0.03em; }
+    h2 { font-size: clamp(28px, 4vw, 42px); letter-spacing: -0.02em; }
+    h3 { font-size: 22px; }
+    p { margin: 0 0 16px; color: var(--muted); }
+
+    .hero-copy p {
+      font-size: 18px;
+      max-width: 62ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .hero-card,
+    .card,
+    .embed-box {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 28px;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--text);
+    }
+
+    .check-badge {
+      flex: 0 0 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      padding: 24px;
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .embed-box {
+      padding: 24px;
+      min-height: 520px;
+    }
+
+    .placeholder {
+      margin-top: 18px;
+      border: 1.5px dashed #aac0d8;
+      border-radius: 16px;
+      background: #f7fbff;
+      min-height: 360px;
+      display: grid;
+      place-items: center;
+      padding: 22px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .code-inline {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 8px;
+      background: #edf3f9;
+      color: var(--primary);
+      font-size: 14px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    .newsletter-box {
+      background: var(--primary);
+      color: white;
+      border-radius: 28px;
+      padding: 32px;
+    }
+
+    .newsletter-box p,
+    .newsletter-box li {
+      color: rgba(255,255,255,.82);
+    }
+
+    .steps {
+      padding-left: 18px;
+      margin: 14px 0 0;
+    }
+
+    .footer {
+      padding: 28px 0 56px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .split,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        justify-content: center;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .section { padding: 72px 0; }
+      .hero { padding-top: 48px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand">Your Name Math Tutoring</a>
+      <nav class="nav-links">
+        <a href="#offer">Offer</a>
+        <a href="#booking">Trial Lesson</a>
+        <a href="#freebies">Free PDFs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Online Math Tutoring</span>
+          <h1>Clear, simple math support for better grades.</h1>
+          <p>I help students understand math step by step — from lower secondary school basics to upper secondary topics like derivatives, integrals, functions and exam prep.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#booking">Book a trial lesson</a>
+            <a class="btn btn-secondary" href="#freebies">Get free study PDFs</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>What this website can do</h3>
+          <div class="check-list">
+            <div class="check-item"><div class="check-badge">1</div><div>Students can book a <strong>trial lesson</strong> directly on the page.</div></div>
+            <div class="check-item"><div class="check-badge">2</div><div>Parents or students can send <strong>general inquiries</strong> through a contact form.</div></div>
+            <div class="check-item"><div class="check-badge">3</div><div>Visitors can download your <strong>PDFs after newsletter signup</strong>.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="offer">
+      <div class="container">
+        <span class="eyebrow">Offer</span>
+        <h2>Designed to convert without feeling pushy.</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>1:1 lessons</h3>
+            <p>Personal online tutoring for students who want structured explanations and efficient preparation for tests, exams and final exams.</p>
+          </div>
+          <div class="card">
+            <h3>Upper secondary focus</h3>
+            <p>Strong focus on Oberstufe topics like analysis, derivatives, integrals, functions, curve sketching and exam-style tasks.</p>
+          </div>
+          <div class="card">
+            <h3>Simple next steps</h3>
+            <p>Each section gives a clear action: book a trial lesson, ask a question, or sign up for free study material.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="booking">
+      <div class="container split">
+        <div>
+          <span class="eyebrow">Trial lesson</span>
+          <h2>Embed your booking tool here.</h2>
+          <p>This section is prepared for a Cal.com booking widget. Cal.com supports inline or pop-up embeds, so students can book without leaving your website.</p>
+          <p>Replace the placeholder below with your real embed code from your Cal.com event page.</p>
+          <p><span class="code-inline">Replace this block with your Cal.com embed snippet</span></p>
+        </div>
+        <div class="embed-box">
+          <h3>Booking widget placeholder</h3>
+          <div class="placeholder">
+            <div>
+              <p><strong>Paste your Cal.com embed here</strong></p>
+              <p>Example: inline booking widget for a 20-minute trial lesson.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="freebies" style="background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+      <div class="container split">
+        <div class="newsletter-box">
+          <span class="eyebrow" style="background: rgba(255,255,255,.12); color: white;">Newsletter + PDF</span>
+          <h2 style="color: white; margin-top: 16px;">Offer free study sheets in exchange for newsletter signup.</h2>
+          <p>Use this section for lead magnets like formula sheets, checklists, or short exam prep PDFs.</p>
+          <ul class="steps">
+            <li>Create an embedded form in MailerLite.</li>
+            <li>Connect it to your newsletter list.</li>
+            <li>Set up an automatic email that sends the PDF after signup.</li>
+          </ul>
+        </div>
+        <div class="embed-box">
+          <h3>Newsletter form placeholder</h3>
+          <p>Paste your MailerLite embed code here. The PDF delivery can happen automatically after signup.</p>
+          <div class="placeholder">
+            <div>
+              <p><strong>Paste your MailerLite form here</strong></p>
+              <p>Use this for newsletter signup and PDF access.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container split">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2>General questions and inquiries.</h2>
+          <p>This area is for parents, students or schools who want to ask about pricing, availability, grade level or lesson structure.</p>
+          <p>You can embed a Tally form here, because it is simple and works well on static websites.</p>
+        </div>
+        <div class="embed-box">
+          <h3>Contact form placeholder</h3>
+          <div class="placeholder">
+            <div>
+              <p><strong>Paste your Tally embed here</strong></p>
+              <p>Use it for general inquiries by email.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Your Name Math Tutoring. Built as a lightweight static website for fast hosting on platforms like Cloudflare Pages.</p>
+    </div>
+  </footer>
+</body>
+</html>
