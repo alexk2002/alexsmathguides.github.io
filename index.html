@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="de" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Math Tutoring | Simple Booking Website</title>
-  <meta name="description" content="Minimal tutoring website with trial lesson booking, contact inquiries, and newsletter lead magnet signup." />
+  <title>alexsmathguides | Online Mathe Nachhilfe</title>
+  <meta name="description" content="Online Mathe Nachhilfe von alexsmathguides – verständliche Erklärungen, Prüfungsvorbereitung und individuelle Unterstützung für Schüler:innen der Sekundarstufe." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -205,7 +205,7 @@
 
     .embed-box {
       padding: 24px;
-      min-height: 520px;
+      min-height: 320px;
     }
 
     .placeholder {
@@ -213,7 +213,7 @@
       border: 1.5px dashed #aac0d8;
       border-radius: 16px;
       background: #f7fbff;
-      min-height: 360px;
+      min-height: 220px;
       display: grid;
       place-items: center;
       padding: 22px;
@@ -254,6 +254,46 @@
       font-size: 14px;
     }
 
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      font-family: inherit;
+      font-size: 14px;
+      resize: vertical;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    .form-row {
+      margin-bottom: 14px;
+    }
+
+    .form-note {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
     @media (max-width: 920px) {
       .hero-grid,
       .split,
@@ -280,12 +320,12 @@
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a href="#top" class="brand"> alexsmathguides </a>
+      <a href="#top" class="brand">alexsmathguides</a>
       <nav class="nav-links">
-        <a href="#offer">Offer</a>
-        <a href="#booking">Trial Lesson</a>
-        <a href="#freebies">Free PDFs</a>
-        <a href="#contact">Contact</a>
+        <a href="#angebot">Angebot</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#freebies">Kostenlose PDFs</a>
+        <a href="#impressum">Impressum</a>
       </nav>
     </div>
   </header>
@@ -294,64 +334,106 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">Online Math Tutoring</span>
-          <h1>Clear, simple math support for better grades.</h1>
-          <p>I help students understand math step by step — from lower secondary school basics to upper secondary topics like derivatives, integrals, functions and exam prep.</p>
+          <span class="eyebrow">Online Mathe Nachhilfe</span>
+          <h1>Klare Mathe-Erklärungen für bessere Noten.</h1>
+          <p>Ich unterstütze Schüler:innen Schritt für Schritt – von den Grundlagen der Sekundarstufe I bis zu Oberstufen-Themen wie Ableitungen, Integrale, Funktionen und Abiturvorbereitung.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#booking">Book a trial lesson</a>
-            <a class="btn btn-secondary" href="#freebies">Get free study PDFs</a>
+            <!-- WhatsApp-Link: Nummer unbedingt anpassen, Format: Ländervorwahl ohne + und ohne 00 -->
+            <a class="btn btn-primary" href="https://wa.me/491701234567" target="_blank" rel="noopener noreferrer">
+              Über WhatsApp schreiben
+            </a>
+            <a class="btn btn-secondary" href="#kontakt">
+              Kontaktformular nutzen
+            </a>
+            <a class="btn btn-secondary" href="#freebies">
+              Kostenlose Lern-PDFs
+            </a>
           </div>
         </div>
 
         <div class="hero-card">
-          <h3>What this website can do</h3>
+          <h3>Was du hier machen kannst</h3>
           <div class="check-list">
-            <div class="check-item"><div class="check-badge">1</div><div>Students can book a <strong>trial lesson</strong> directly on the page.</div></div>
-            <div class="check-item"><div class="check-badge">2</div><div>Parents or students can send <strong>general inquiries</strong> through a contact form.</div></div>
-            <div class="check-item"><div class="check-badge">3</div><div>Visitors can download your <strong>PDFs after newsletter signup</strong>.</div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="offer">
-      <div class="container">
-        <span class="eyebrow">Offer</span>
-        <h2>Designed to convert without feeling pushy.</h2>
-        <div class="grid-3">
-          <div class="card">
-            <h3>1:1 lessons</h3>
-            <p>Personal online tutoring for students who want structured explanations and efficient preparation for tests, exams and final exams.</p>
-          </div>
-          <div class="card">
-            <h3>Upper secondary focus</h3>
-            <p>Strong focus on Oberstufe topics like analysis, derivatives, integrals, functions, curve sketching and exam-style tasks.</p>
-          </div>
-          <div class="card">
-            <h3>Simple next steps</h3>
-            <p>Each section gives a clear action: book a trial lesson, ask a question, or sign up for free study material.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="booking">
-      <div class="container split">
-        <div>
-          <span class="eyebrow">Trial lesson</span>
-          <h2>Embed your booking tool here.</h2>
-          <p>This section is prepared for a Cal.com booking widget. Cal.com supports inline or pop-up embeds, so students can book without leaving your website.</p>
-          <p>Replace the placeholder below with your real embed code from your Cal.com event page.</p>
-          <p><span class="code-inline">Replace this block with your Cal.com embed snippet</span></p>
-        </div>
-        <div class="embed-box">
-          <h3>Booking widget placeholder</h3>
-          <div class="placeholder">
-            <div>
-              <p><strong>Paste your Cal.com embed here</strong></p>
-              <p>Example: inline booking widget for a 20-minute trial lesson.</p>
+            <div class="check-item">
+              <div class="check-badge">1</div>
+              <div>Mich direkt per <strong>WhatsApp-Nachricht</strong> kontaktieren (Fragen, Terminabsprachen, kurze Einschätzung).</div>
+            </div>
+            <div class="check-item">
+              <div class="check-badge">2</div>
+              <div>Über das <strong>Kontaktformular</strong> per E-Mail schreiben – z.B. für Eltern oder ausführlichere Anfragen.</div>
+            </div>
+            <div class="check-item">
+              <div class="check-badge">3</div>
+              <div>Nach Newsletter-Anmeldung <strong>kostenlose Mathe-PDFs</strong> herunterladen.</div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="angebot">
+      <div class="container">
+        <span class="eyebrow">Angebot</span>
+        <h2>Individuelle Mathe-Nachhilfe ohne Druck.</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>1:1 Online-Unterricht</h3>
+            <p>Individuelle Online-Nachhilfe für Schüler:innen, die strukturierte Erklärungen, gezielte Übung und eine klare Vorbereitung auf Klassenarbeiten und Prüfungen möchten.</p>
+          </div>
+          <div class="card">
+            <h3>Fokus Oberstufe</h3>
+            <p>Besonderer Schwerpunkt auf Analysis: Ableitungen, Integrale, Funktionen, Kurvendiskussion, Klausur- und Abituraufgaben – immer Schritt für Schritt erklärt.</p>
+          </div>
+          <div class="card">
+            <h3>Einfacher Einstieg</h3>
+            <p>Du kannst mir direkt per WhatsApp schreiben, das Kontaktformular nutzen oder erst einmal kostenlose Lernunterlagen herunterladen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="kontakt">
+      <div class="container split">
+        <div>
+          <span class="eyebrow">Kontakt</span>
+          <h2>Schreib mir dein Mathe-Thema.</h2>
+          <p>Nutze WhatsApp für schnelle Rückfragen oder Terminabstimmungen. Für ausführlichere Anfragen – zum Beispiel als Elternteil oder Schule – kannst du das Kontaktformular verwenden.</p>
+          <p><span class="code-inline">Tipp: In deiner ersten Nachricht kannst du kurz Klasse, Bundesland und das aktuelle Thema nennen.</span></p>
+          <p style="margin-top: 18px; font-weight: 600;">Kontakt per WhatsApp:</p>
+          <p>
+            <a class="btn btn-primary" href="https://wa.me/491701234567" target="_blank" rel="noopener noreferrer">
+              Chat in WhatsApp öffnen
+            </a>
+          </p>
+        </div>
+
+        <div class="embed-box">
+          <h3>Kontaktformular (E-Mail)</h3>
+          <!-- Einfaches Mailto-Formular; serverseitige Verarbeitung kannst du später ergänzen -->
+          <form action="mailto:deine-email@alexsmathguides.de" method="post" enctype="text/plain">
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="Name" required />
+            </div>
+            <div class="form-row">
+              <label for="email">E-Mail</label>
+              <input type="email" id="email" name="E-Mail" required />
+            </div>
+            <div class="form-row">
+              <label for="subject">Betreff</label>
+              <input type="text" id="subject" name="Betreff" />
+            </div>
+            <div class="form-row">
+              <label for="message">Nachricht</label>
+              <textarea id="message" name="Nachricht" placeholder="Z.B. Klasse, Bundesland, Thema, gewünschte Zeiten"></textarea>
+            </div>
+            <div class="form-row">
+              <p class="form-note">
+                Mit dem Absenden der Nachricht erklärst du dich damit einverstanden, dass deine Angaben zur Beantwortung deiner Anfrage per E-Mail verarbeitet werden. Weitere Informationen findest du in der Datenschutzerklärung.
+              </p>
+            </div>
+            <button type="submit" class="btn btn-primary">Nachricht senden</button>
+          </form>
         </div>
       </div>
     </section>
@@ -359,44 +441,91 @@
     <section class="section" id="freebies" style="background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
       <div class="container split">
         <div class="newsletter-box">
-          <span class="eyebrow" style="background: rgba(255,255,255,.12); color: white;">Newsletter + PDF</span>
-          <h2 style="color: white; margin-top: 16px;">Offer free study sheets in exchange for newsletter signup.</h2>
-          <p>Use this section for lead magnets like formula sheets, checklists, or short exam prep PDFs.</p>
+          <span class="eyebrow" style="background: rgba(255,255,255,.12); color: white;">Newsletter + PDFs</span>
+          <h2 style="color: white; margin-top: 16px;">Kostenlose Lernunterlagen für Mathe.</h2>
+          <p>Trage dich in den Newsletter ein und erhalte kostenlose Formelsammlungen, Checklisten und kurze Abitur-Vorbereitungs-PDFs.</p>
           <ul class="steps">
-            <li>Create an embedded form in MailerLite.</li>
-            <li>Connect it to your newsletter list.</li>
-            <li>Set up an automatic email that sends the PDF after signup.</li>
+            <li>Newsletter-Formular von deinem E-Mail-Tool (z.B. MailerLite) einbetten.</li>
+            <li>Mit deiner E-Mail-Liste verbinden.</li>
+            <li>Automatische E-Mail einrichten, die die PDFs direkt nach Anmeldung verschickt.</li>
           </ul>
         </div>
         <div class="embed-box">
-          <h3>Newsletter form placeholder</h3>
-          <p>Paste your MailerLite embed code here. The PDF delivery can happen automatically after signup.</p>
+          <h3>Newsletter-Formular</h3>
+          <p>Hier kannst du den Embed-Code deines E-Mail-Anbieters (z.B. MailerLite) einfügen.</p>
           <div class="placeholder">
             <div>
-              <p><strong>Paste your MailerLite form here</strong></p>
-              <p>Use this for newsletter signup and PDF access.</p>
+              <p><strong>Newsletter-Formular einfügen</strong></p>
+              <p>Nach der Anmeldung erhalten Interessent:innen automatisch Zugriff auf deine Lern-PDFs.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contact">
-      <div class="container split">
-        <div>
-          <span class="eyebrow">Contact</span>
-          <h2>General questions and inquiries.</h2>
-          <p>This area is for parents, students or schools who want to ask about pricing, availability, grade level or lesson structure.</p>
-          <p>You can embed a Tally form here, because it is simple and works well on static websites.</p>
-        </div>
-        <div class="embed-box">
-          <h3>Contact form placeholder</h3>
-          <div class="placeholder">
-            <div>
-              <p><strong>Paste your Tally embed here</strong></p>
-              <p>Use it for general inquiries by email.</p>
-            </div>
-          </div>
+    <section class="section" id="impressum">
+      <div class="container">
+        <span class="eyebrow">Impressum</span>
+        <h2>Angaben gemäß § 5 DDG</h2>
+        <div class="card">
+          <h3>Dienstanbieter</h3>
+          <p>
+            alexsmathguides – Online Mathe Nachhilfe<br>
+            Inhaber: Alexander Kleymann<br>
+            Zillestraße 76<br>
+            10585 Berlin<br>
+            Deutschland
+          </p>
+
+          <h3>Kontakt</h3>
+          <p>
+            Telefon / WhatsApp: +49 (0)170 1234567<br>
+            E-Mail: deine-email@alexsmathguides.de
+          </p>
+
+          <!-- Optional: nur ausfüllen, wenn vorhanden -->
+          <h3>Umsatzsteuer</h3>
+          <p>
+            Umsatzsteuer-Identifikationsnummer gemäß § 27 a UStG: DE_______<br>
+            (Falls keine USt-ID vorhanden ist, kann dieser Abschnitt angepasst oder entfernt werden.)
+          </p>
+
+          <h3>Verantwortlich für den Inhalt</h3>
+          <p>
+            Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:<br>
+            Alexander Kleymann, Zillestraße 76, 10585 Berlin
+          </p>
+
+          <h3>Haftung für Inhalte</h3>
+          <p>
+            Als Diensteanbieter bin ich gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. 
+            Nach §§ 8 bis 10 DDG bin ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. 
+            Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. 
+            Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden diese Inhalte umgehend entfernt.
+          </p>
+
+          <h3>Haftung für Links</h3>
+          <p>
+            Mein Angebot enthält ggf. Links zu externen Webseiten Dritter, auf deren Inhalte ich keinen Einfluss habe. 
+            Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. 
+            Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. 
+            Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. 
+            Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. 
+            Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. 
+            Bei Bekanntwerden von Rechtsverletzungen werden derartige Links umgehend entfernt.
+          </p>
+
+          <h3>Urheberrecht</h3>
+          <p>
+            Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. 
+            Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes 
+            bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. 
+            Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. 
+            Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. 
+            Insbesondere werden Inhalte Dritter als solche gekennzeichnet. 
+            Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, wird um einen entsprechenden Hinweis gebeten. 
+            Bei Bekanntwerden von Rechtsverletzungen werden derartige Inhalte umgehend entfernt.
+          </p>
         </div>
       </div>
     </section>
@@ -404,7 +533,11 @@
 
   <footer class="footer">
     <div class="container">
-      <p>© 2026 Your Name Math Tutoring. Built as a lightweight static website for fast hosting on platforms like Cloudflare Pages.</p>
+      <p>© 2026 alexsmathguides – Online Mathe Nachhilfe von Alexander Kleymann.</p>
+      <div class="footer-links">
+        <a href="#impressum">Impressum</a>
+        <!-- Später: separate Seite für Datenschutz verlinken -->
+      </div>
     </div>
   </footer>
 </body>
